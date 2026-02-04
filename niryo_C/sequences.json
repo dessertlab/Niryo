@@ -1,0 +1,67 @@
+{
+  "poses": {
+    "hand-raised": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 0.0, 10.0, 0.0, 60.0, 0.0]
+    },
+    "wave-left": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 0.0, 10.0, 30.0, 60.0, 0.0]
+    },
+    "wave-right": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 0.0, 10.0, -30.0, 60.0, 0.0]
+    },
+    "point-left": {
+      "type": "xyz_pos",
+      "unit": "deg",
+      "values": {
+        "x": -2.4,
+        "y": 295.4,
+        "z": 428.7,
+        "roll": 0.0011,
+        "pitch": 0.08,
+        "yaw": 90.472
+      }
+    },
+
+    "rotate-hand-right": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 0.0, 10.0, 30.0, 60.0, 45.0]
+    },
+    "rotate-hand-left": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 0.0, 10.0, -30.0, -30.0, -45.0]
+    },
+    
+    "pick": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, -17.5, -45, 0.0, -30.0, 0.0]
+    },
+    "bring-up": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [0.0, 15, -5, 0.0, 0.0, 0.0]
+    },
+    "bring-up-left": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [90.0, 15, -5, 0.0, 0.0, 90.0]
+    },"place-left": {
+      "type": "joints",
+      "unit": "deg",
+      "values": [90.0, -17.5, -45, 0.0, -30.0, 90.0]
+    }
+  },
+  "sequences": {
+    "say-hi": ["hand-raised", "wave-left", "wave-right", "wave-left", "wave-right", "hand-raised", {"wait": 1}],
+    "flex-gripper" : ["hand-raised", "rotate-hand-right", {"gripper": "open"}, "rotate-hand-left", {"gripper": "close"}, "hand-raised"],
+    "pick-test" : ["hand-raised", {"gripper" : "open"}, "pick", {"gripper" : "close"}, "bring-up", {"wait" : 0.75}, "bring-up-left", "place-left", {"gripper" : "open"}, "bring-up-left", {"gripper" : "close"}, "hand-raised"]
+  }
+}

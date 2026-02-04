@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/boccolarg/Desktop/niryo_C/lib/json-c/build/cmake_install.cmake",
+		"/home/boccolarg/Desktop/niryo_C/lib/json-c/build/doc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
